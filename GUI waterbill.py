@@ -11,19 +11,19 @@ mc.title("WATER BILL FORM")
 
 #Title Grid
 Title_Frame = tk.Frame(mc)
-Title_Frame.pack(anchor = "center", padx=20, pady=10)
-Form_title = tk.LabelFrame(Title_Frame, text = "WATER BILL ONLINE FORM")
-Form_title.grid(row=0, column=0, padx=0, pady=0)
-Form_title.config(font = ("Calibri", 16, "bold"))
+Title_Frame.pack( padx=20, pady=5)
+Form_title_Frame = tk.LabelFrame(Title_Frame, text = "WATER BILL ONLINE FORM")
+Form_title_Frame.grid(row=0, column=0, padx=0, pady=0)
+Form_title_Frame.config(font = ("Calibri", 16, "bold"))
 
 
 #Displays WaterDistrict Address
-WaterDistrict_Address = tk.Label(Title_Frame, text ="Corrales Ave. 27 Cagayan De Oro City NON-VAT REG. TIN 000-550-995-000")
-WaterDistrict_Address.grid(row=0,column=0)
+WaterDistrict_Address = tk.Label(Form_title_Frame, text ="Corrales Ave. 27 Cagayan De Oro City NON-VAT REG. TIN 000-550-995-000")
+WaterDistrict_Address.grid(row=1,column=0)
 WaterDistrict_Address.config(font = ("Calibri", 6, "bold"))
 
-Water_District = tk.Label(Form_title, text = "   Cagayan De Oro City Water District")
-Water_District.grid(row=1, column=0, padx=19, pady=0)
+Water_District = tk.Label(Form_title_Frame, text = "   Cagayan De Oro City Water District")
+Water_District.grid(row=2, column=0, padx=19, pady=0)
 
 #DEFINE FRAME IN WINDOW
 frame = tk.Frame(mc) 
@@ -139,15 +139,15 @@ Meter_Readings_Label.grid(row=0, column=1, columnspan=2)
 
 #Previous Meter Reading (Randomized between 1000-1050)
 PreviousValue = random.randint(1000,1050) #Randomized Previous
-PreviousMeter_Label = tk.Label(Utility_Report_Frame, text="PREVIOUS")
+PreviousMeter_Label = tk.Label(Utility_Report_Frame, text="PREVIOUS:")
 PreviousMeter_Label.grid(row=1, column=1)
 PreviousMeter_Display = tk.Label(Utility_Report_Frame, width=10, text = PreviousValue)
 PreviousMeter_Display.config(font=("Calibri", 10, "bold"))
-PreviousMeter_Display.grid(row =2, column=1)
+PreviousMeter_Display.grid(row =1, column=2)
 
 #Present Meter Reading NOTE: INPUT RETURN/ELSE ERROR IF THE INPUT IS LESS THAN 'PreviousValue'
-PresentMeter_Label = tk.Label(Utility_Report_Frame, text="PRESENT")
-PresentMeter_Label.grid(row=1, column=2)
+PresentMeter_Label = tk.Label(Utility_Report_Frame, text="PRESENT:")
+PresentMeter_Label.grid(row=2, column=1)
 PresentMeter_Entry = tk.Entry(Utility_Report_Frame, width=10)
 PresentMeter_Entry.grid(row=2, column=2)    
 #NOTE: INPUT FUNCTION THAT DISPLAYS THE CUBIC METERS
@@ -157,9 +157,13 @@ CubicMeter_Label.grid(row=1,column=3)
 CubicMeter_Entry = tk.Label(Utility_Report_Frame, text = "ConsumedVar") #Variable for Waterbill consumption
 CubicMeter_Entry.grid(row=2, column=3)
 
+Arrears_Label = tk.Label(Utility_Report_Frame, text = "Arrears:")
+Arrears_Label.grid(row= 3, column=1)
+Arrears_Entry = tk.Entry(Utility_Report_Frame, width= 6)
+Arrears_Entry.grid(row=3, column=2)
 
 #NOTE: Use random for WIN number gneration
-
+#ALL DONE: NOTE TO IMPROVE GUI DESIGN
 
 
 
