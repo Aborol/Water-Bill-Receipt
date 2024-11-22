@@ -1,0 +1,11 @@
+
+ConsumerType_Label
+ConsumerType_Label.grid
+
+
+spinbox
+#NOTE: Use random for WIN number gneration
+#ALL DONE: NOTE TO IMPROVE GUI DESIGN
+
+
+Governmental, Residential, Commericial, Industrial
