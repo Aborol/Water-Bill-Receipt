@@ -1,0 +1,17 @@
+PreviousMR = 33
+
+#Water meter readings
+PresentMR = int(input("Enter present meter reading: "))
+Totalcm = PresentMR - PreviousMR
+Totalcost = Totalcm * 16.60
+
+print("Amount to be paid:", Totalcost)
+
+#Calculating payment amounts
+Payment = float(input("Enter payment: "))
+Change =  Payment - Totalcost
+
+#Printing results
+print("Total cubic meter consumed:", Totalcm)
+print("Total cost:", Totalcost)
+print("Change:", Change)
